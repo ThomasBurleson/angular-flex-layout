@@ -262,7 +262,9 @@ describe('class directive', () => {
     let button = queryFor(fixture, '[mat-raised-button]')[0].nativeElement;
 
     if (!isPlatformServer(platformId)) {
-      expect(button).toHaveCssClass('mat-raised-button');
+      expect(button).toHaveAttributes({
+        'mat-raised-button': '',
+      });
     }
     expect(button).toHaveCssClass('btn-xs');
     expect(button).toHaveCssClass('mat-primary');
@@ -272,7 +274,9 @@ describe('class directive', () => {
     button = queryFor(fixture, '[mat-raised-button]')[0].nativeElement;
 
     if (!isPlatformServer(platformId)) {
-      expect(button).toHaveCssClass('mat-raised-button');
+      expect(button).toHaveAttributes({
+        'mat-raised-button': '',
+      });
     }
     expect(button).not.toHaveCssClass('btn-xs');
     expect(button).toHaveCssClass('mat-primary');
